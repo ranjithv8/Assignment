@@ -11,7 +11,7 @@ const checkinRoutes: Routes = [
 ];
 
 @NgModule({
-  imports:      [ RouterModule.forChild(checkinRoutes) ],
+  imports:      [ RouterModule.forChild(checkinRoutes),FormsModule ],
   declarations: [ CheckInComponent,CheckInSuccessComponent],
   bootstrap:    [ ]
 })
