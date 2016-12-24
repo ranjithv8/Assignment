@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Router} from '@angular/router';
+import { LanguageService } from "./Common/i18n/language.service";
 
 @Component({
   template: `<section class = "panel-body">
@@ -9,8 +10,14 @@ import {Router} from '@angular/router';
 				</section>`,
 })
 export class HomeComponent  {
-	constructor(private router: Router) { }
+	language ={};
+	constructor(private router: Router,private _languageService:LanguageService) { 
+		console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+		
+		this._languageService.getLabels();
+	}
 	showName() {
 		this.router.navigate(['checkin']);
+		console.log(this.language);
 	}
 }
