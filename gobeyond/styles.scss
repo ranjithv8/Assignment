@@ -1,0 +1,29 @@
+$font-stack:    Arial, Helvetica, sans-serif;
+$primary-color: #369;
+
+h1 {
+  color: $primary-color ;
+  font-family: $font-stack;
+  font-size: 250%;
+}
+
+form {
+	padding: 22px;
+}
+
+
+input#family-name{
+  background: url("assets/imgs/family_icon.png") no-repeat left;
+}
+
+input#booking-id {
+	background: url("assets/imgs/hash_icon.png") no-repeat left;
+}
+
+input#booking-id,
+input#family-name{
+  padding-left: 30px;
+  background-size: 15px;
+  background-position: 10px;
+}
+

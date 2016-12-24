@@ -6,6 +6,7 @@ import { LanguageService } from "../Common/i18n/language.service";
 
 @Component({
   templateUrl: 'app/CheckIn/checkin.component.html',
+  styleUrls: ['../../styles.scss'],
   providers: [CheckinService]
 })
 export class CheckInComponent  {
