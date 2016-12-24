@@ -1,5 +1,6 @@
 {
 	"checkIn":"Check In",
 	"famName":"Family Name",
-	"brdId": "Boarding Id"
+	"brdId": "Boarding Id",
+	"checkin-success": "Checkin Successfull"
 }

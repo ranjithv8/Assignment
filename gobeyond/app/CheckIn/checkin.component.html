@@ -5,19 +5,19 @@
 <form #checkinForm="ngForm"  (ngSubmit)="onSubmit()">
 	<div class="form-group">
 
-		<label [hidden]= "!bookingid.valid && !bookingid.pristine"  for="booking-id">Booking Id:</label>
+		<label [hidden]= "!bookingid.valid && !bookingid.pristine"  for="booking-id">{{label.brdId || "Boarding Id"}}:</label>
 		<div [hidden]= "bookingid.valid || bookingid.pristine" class="alert alert-danger">Booking id is invalid.</div>
 		<input type="text" class="form-control" id="booking-id" pattern="[a-zA-Z0-9]*"  [(ngModel)]="model.bookingid" name="bookingid" #bookingid="ngModel" required/>
 
 	</div>
 	<div class="form-group">
 
-		<label [hidden]= "!familyName.valid && !familyName.pristine"  for="family-name">Family Name:</label>
+		<label [hidden]= "!familyName.valid && !familyName.pristine"  for="family-name">{{label.famName || "Family Name"}}:</label>
 		<div [hidden]= "familyName.valid || familyName.pristine" class="alert alert-danger">Family Name is invalid</div>
 	    <input type="text" class="form-control" id="family-name" pattern="[a-zA-Z]*" [(ngModel)]="model.familyName" name="familyName" #familyName="ngModel" required/>
 	    
 	</div>
 	<div class= "text-center">
-		<button type = "submit" class = "btn btn-primary" [disabled]="!checkinForm.form.valid">Submit</button>
+		<button type = "submit" class = "btn btn-primary" [disabled]="!checkinForm.form.valid">{{label.submit || "Submit"}}</button>
 	</div>
 </form>

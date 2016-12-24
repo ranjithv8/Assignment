@@ -5,14 +5,15 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class LanguageService {
 	language={};
-	constructor (private http: Http) {}
+	constructor (private http: Http) {
+	}
 
 	getLabels() {
 
 		return this.http.get("/newapp/checkin/i18n/language")
 			   .toPromise()
 			   .then(
-					response => {
+					(response : any) => {
 						this.setLanguage(JSON.parse(response._body));
 					}
 				).catch(
@@ -22,7 +23,7 @@ export class LanguageService {
 				)
 	}
 
-	setLanguage(language){
+	setLanguage(language : any){
 		this.language = language;
 	}
 

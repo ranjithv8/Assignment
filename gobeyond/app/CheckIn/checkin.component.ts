@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {Router} from '@angular/router';
 
 import { CheckinService } from "./checkin.service";
+import { LanguageService } from "../Common/i18n/language.service";
 
 @Component({
   templateUrl: 'app/CheckIn/checkin.component.html',
@@ -9,9 +10,17 @@ import { CheckinService } from "./checkin.service";
 })
 export class CheckInComponent  {
 	formError = "";
-	model= {};
-	constructor(private router: Router,private _checkinService: CheckinService) {
-
+	model= {
+		bookingid:"",
+		familyName:""
+	};
+	label:any;
+	constructor(private router: Router,private _checkinService: CheckinService,private _languageService:LanguageService) {
+		debugger;
+		var labels : any = this._languageService.getLanguage();
+		this.label = {};
+		this.label.brdId = labels.brdId;
+		this.label.famName = labels.famName;
 	}
 	
 	onSubmit() {

@@ -1,5 +1,6 @@
 {
-	"checkIn":"Check In dutch",
-	"famName":"Family Name dutch",
-	"brdId": "Boarding Id dutch"
+	"checkIn":"Check In",
+	"famName":"Achternaam",
+	"brdId": "Boarding Id",
+	"checkin-success": "Checkin Succesvolle"
 }

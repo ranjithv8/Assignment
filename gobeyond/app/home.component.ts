@@ -12,12 +12,9 @@ import { LanguageService } from "./Common/i18n/language.service";
 export class HomeComponent  {
 	language ={};
 	constructor(private router: Router,private _languageService:LanguageService) { 
-		console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-		
-		this._languageService.getLabels();
+		console.log(this._languageService.getLanguage());
 	}
 	showName() {
 		this.router.navigate(['checkin']);
-		console.log(this.language);
 	}
 }
