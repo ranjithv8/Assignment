@@ -17,7 +17,6 @@ export class CheckInComponent  {
 	};
 	label:any;
 	constructor(private router: Router,private _checkinService: CheckinService,private _languageService:LanguageService) {
-		debugger;
 		var labels : any = this._languageService.getLanguage();
 		this.label = {};
 		this.label.brdId = labels.brdId;

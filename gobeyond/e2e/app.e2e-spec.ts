@@ -1,15 +1,16 @@
 import { browser, element, by } from 'protractor';
 
-describe('QuickStart E2E Tests', function () {
+describe('GoBeyond airlines E2E tests', function() {
+  it('go to site', function() {
+    browser.get('http://localhost:4000/');
 
-  let expectedMsg = 'Hello Angular';
+    element(by.css('.btn-primary')).click();
 
-  beforeEach(function () {
-    browser.get('');
+    element(by.id('booking-id')).sendKeys("sdlfjshd");
+    element(by.id('family-name')).sendKeys("sdlfjshd");
+
+    
+    element(by.css('.btn-primary')).click();
   });
-
-  it('should display: ' + expectedMsg, function () {
-    expect(element(by.css('h1')).getText()).toEqual(expectedMsg);
-  });
-
 });
+
