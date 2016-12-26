@@ -6,8 +6,8 @@ import 'rxjs/add/operator/toPromise';
 export class CheckinService {
 	constructor (private http: Http) {}
 
-	getCheckinStatus() {
-		return this.http.post("/newapp/checkin/status",{})
+	getCheckinStatus(request: any) {
+		return this.http.post("/newapp/checkin/status",request)
 			   .toPromise();
 	}
 }

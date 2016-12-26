@@ -22,7 +22,7 @@ class MockLanguageService {
 }
 
 class MockCheckinService {
-	getCheckinStatus() {		
+	getCheckinStatus(request:any) {		
 		return new Promise((resolve, reject) => {
    			reject({_body: "Invalid Name"});
 		});
@@ -30,6 +30,7 @@ class MockCheckinService {
 }
 
 describe('Component: CheckInComponent', () => {
+	var app:CheckInComponent,fixture:any;
     beforeEach(() => {
 	    TestBed.configureTestingModule({
 	      declarations: [CheckInComponent],
@@ -39,7 +40,7 @@ describe('Component: CheckInComponent', () => {
 	    });
   	});
 
-  	it('check Checkin Component', async(() => {
+  	it('check Language service', async(() => {
   		TestBed.overrideComponent(CheckInComponent, {
 	    	set: {
 	       		template: '<div>Overridden template here</div>'
@@ -47,17 +48,35 @@ describe('Component: CheckInComponent', () => {
 	    });
 	    TestBed.compileComponents().then(() => {
 
-		    const fixture = TestBed.createComponent(CheckInComponent);
+		    fixture = TestBed.createComponent(CheckInComponent);
 
 		    // Access the dependency injected component instance
-		    const app = fixture.componentInstance;
-
+		    app = fixture.componentInstance;
 		    expect(app).toBeDefined();
 		    expect(app.label.brdId).toBe("Label for Boarding");
-		    expect(app.label.famName).toBe("Label for Family Name");
-		    
-		    // Detect changes as necessary
+		    expect(app.label.famName).toBe("Label for Family Name")		    // Detect changes as necessary
 		    fixture.detectChanges();
-  		});
+		});
+	    
 	}));
+
+	/*it('check Checkin Service', async(() => {
+  		TestBed.overrideComponent(CheckInComponent, {
+	    	set: {
+	       		template: '<div>Overridden template here</div>'
+	       }
+	    });
+	    TestBed.compileComponents().then(() => {
+
+		    fixture = TestBed.createComponent(CheckInComponent);
+
+		    // Access the dependency injected component instance
+		    app = fixture.componentInstance;
+
+		    app.onSubmit();
+
+		    expect(app.formError).toEqual("Invalid Name")	
+		});
+	    
+	}));*/
 });

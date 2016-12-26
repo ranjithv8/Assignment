@@ -28,7 +28,7 @@ export class CheckInComponent  {
 			bookingId : this.model.bookingid,
 			familyName: this.model.familyName
 		}
-		this._checkinService.getCheckinStatus().then(
+		this._checkinService.getCheckinStatus(request).then(
 			response => {
 				this.router.navigate(['checkin-success']);
 			}
