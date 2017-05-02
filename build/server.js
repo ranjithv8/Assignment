@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 var routes = require("./routes/routes.js")(app);
 
-app.use(express.static("../gobeyond"));
+app.use(express.static("public"));
 
 app.get('*',function(req,res){
 	res.sendFile('index.html');
