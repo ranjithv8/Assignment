@@ -13,4 +13,6 @@ app.get('*',function(req,res){
 	res.sendFile('index.html');
 });
  
-var server = app.listen(4020, function () {});
+var server = app.listen(4020, function () {
+	console.log("listening in port "+ server.address().port);
+});
